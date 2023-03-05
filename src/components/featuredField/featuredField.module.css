@@ -1,0 +1,49 @@
+.ff {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ffItem {
+  flex: 1;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ffImg {
+  width: 100%;
+}
+
+.ffName {
+  font-weight: bold;
+  font-size: 36px;
+  color: #fcf4ec;
+}
+
+.ffCity {
+  font-weight: normal;
+  font-size: 20px;
+  color: #fcf4ec;
+}
+
+.ffPrice {
+  font-weight: normal;
+  font-size: 24px;
+  color: #fdc845;
+}
+.ffRatingButton {
+  background-color: #88c177;
+  color: #1f1f1f;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.ffRatingEx {
+  color: #fcf4ec;
+  font-size: 16px;
+}

@@ -34,7 +34,7 @@ const Header = () => {
     setOptions((prev) => {
       return {
         ...prev,
-        [name]: operation === "i" ? options[name] + 1 : options[name] + 1,
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
       };
     });
   };
@@ -85,67 +85,82 @@ const Header = () => {
               icon={faPenToSquare}
               className={styles.headerIcon}
             />
-            <span className={styles.headerSearchText}>
+            <span
+              onClick={() => setOpenOptions(!openOptions)}
+              className={styles.headerSearchText}
+            >
               {`${options.team} team . ${options.hours}hours . ${options.field}field`}
             </span>
-            <div className={styles.option}>
-              <div className={styles.optionItem}>
-                <span className={styles.optionText}>Team</span>
-                <div className={styles.optionCounter}>
-                  <button
-                    className={styles.optionCounterButton}
-                    onClick={() => handleOption("team", "d")}
-                  >
-                    -
-                  </button>
-                  <span className={styles.optionCounterNumber}>
-                    {options.team}
-                  </span>
-                  <button
-                    className={styles.optionCounterButton}
-                    onClick={() => handleOption("team", "i")}
-                  >
-                    +
-                  </button>
+            {openOptions && (
+              <div className={styles.option}>
+                <div className={styles.optionItem}>
+                  <span className={styles.optionText}>Team</span>
+                  <div className={styles.optionCounter}>
+                    <button
+                      disabled={options.team <= 1}
+                      className={styles.optionCounterButton}
+                      onClick={() => handleOption("team", "d")}
+                    >
+                      -
+                    </button>
+                    <span className={styles.optionCounterNumber}>
+                      {options.team}
+                    </span>
+                    <button
+                      disabled={options.team >= 4}
+                      className={styles.optionCounterButton}
+                      onClick={() => handleOption("team", "i")}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.optionItem}>
+                  <span className={styles.optionText}>Hour</span>
+                  <div className={styles.optionCounter}>
+                    <button
+                      disabled={options.hours <= 1}
+                      className={styles.optionCounterButton}
+                      onClick={() => handleOption("hours", "d")}
+                    >
+                      -
+                    </button>
+                    <span className={styles.optionCounterNumber}>
+                      {options.hours}
+                    </span>
+                    <button
+                      disabled={options.hours >= 24}
+                      className={styles.optionCounterButton}
+                      onClick={() => handleOption("hours", "i")}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.optionItem}>
+                  <span className={styles.optionText}>Field</span>
+                  <div className={styles.optionCounter}>
+                    <button
+                      disabled={options.field <= 1}
+                      className={styles.optionCounterButton}
+                      onClick={() => handleOption("field", "d")}
+                    >
+                      -
+                    </button>
+                    <span className={styles.optionCounterNumber}>
+                      {options.field}
+                    </span>
+                    <button
+                      disabled={options.field >= 3}
+                      className={styles.optionCounterButton}
+                      onClick={() => handleOption("field", "i")}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div className={styles.optionItem}>
-                <span className={styles.optionText}>Hour</span>
-                <div className={styles.optionCounter}>
-                  <button
-                    className={styles.optionCounterButton}
-                    onClick={() => handleOption("hour", "d")}
-                  >
-                    -
-                  </button>
-                  <span className={styles.optionCounterNumber}>1</span>
-                  <button
-                    className={styles.optionCounterButton}
-                    onClick={() => handleOption("hour", "i")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className={styles.optionItem}>
-                <span className={styles.optionText}>Field</span>
-                <div className={styles.optionCounter}>
-                  <button
-                    className={styles.optionCounterButton}
-                    onClick={() => handleOption("field", "d")}
-                  >
-                    -
-                  </button>
-                  <span className={styles.optionCounterNumber}>1</span>
-                  <button
-                    className={styles.optionCounterButton}
-                    onClick={() => handleOption("field", "i")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
           <div className={styles.headerSearchItem}>
             <button className={styles.headerBtn}>SEARCH</button>
