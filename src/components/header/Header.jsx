@@ -11,10 +11,11 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [place, setPlace] = useState("");
   const [openDate, setOpenDate] = useState(false);
-
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -30,6 +31,8 @@ const Header = () => {
     field: 1,
   });
 
+  const navigate = useNavigate();
+
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -37,6 +40,10 @@ const Header = () => {
         [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
       };
     });
+  };
+
+  const handleSearch = () => {
+    navigate("/field", { state: { place, date, options } });
   };
 
   return (
@@ -56,6 +63,7 @@ const Header = () => {
               type="text"
               placeholder="Select a fields"
               className={styles.headerSearchInput}
+              onChange={(e) => setPlace(e.target.value)}
             />
           </div>
           <div className={styles.headerSearchItem}>
@@ -77,6 +85,7 @@ const Header = () => {
                 moveRangeOnFirstSelection={false}
                 ranges={date}
                 className={styles.date}
+                minDate={new Date()}
               />
             )}
           </div>
@@ -163,7 +172,9 @@ const Header = () => {
             )}
           </div>
           <div className={styles.headerSearchItem}>
-            <button className={styles.headerBtn}>SEARCH</button>
+            <button className={styles.headerBtn} onClick={handleSearch}>
+              SEARCH
+            </button>
           </div>
         </div>
       </div>
