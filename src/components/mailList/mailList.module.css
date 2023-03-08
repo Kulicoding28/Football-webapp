@@ -37,3 +37,30 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .mail {
+    margin-top: 80px;
+    padding: 20px;
+  }
+
+  .mailTitle {
+    font-size: 28px;
+  }
+
+  .mailDesc {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .mailInput {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .mailBtn {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+  }
+}

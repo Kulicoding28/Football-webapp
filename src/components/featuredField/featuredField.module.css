@@ -47,3 +47,117 @@
   color: #fcf4ec;
   font-size: 16px;
 }
+
+.ff {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ffItem {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ffImg {
+  width: 100%;
+}
+
+.ffName {
+  font-weight: bold;
+  font-size: 28px;
+  color: #fcf4ec;
+}
+
+.ffCity {
+  font-weight: normal;
+  font-size: 18px;
+  color: #fcf4ec;
+}
+
+.ffPrice {
+  font-weight: normal;
+  font-size: 22px;
+  color: #fdc845;
+}
+
+.ffRatingButton {
+  background-color: #88c177;
+  color: #1f1f1f;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.ffRatingEx {
+  color: #fcf4ec;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .ff {
+    max-width: 425px;
+  }
+
+  .ffItem {
+    width: calc(50% - 8px);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .ff {
+    justify-content: center;
+    max-width: 325px;
+  }
+
+  .ffItem {
+    max-width: 100%;
+  }
+
+  .ffName {
+    font-size: 18px;
+  }
+
+  .ffCity {
+    font-size: 10px;
+  }
+
+  .ffPrice {
+    font-size: 18px;
+  }
+
+  .ffRatingEx {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ff {
+    max-width: 1024px;
+  }
+
+  .ffItem {
+    width: calc(33.33% - 10.666px);
+  }
+
+  .ffName {
+    font-size: 36px;
+  }
+
+  .ffCity {
+    font-size: 20px;
+  }
+
+  .ffPrice {
+    font-size: 24px;
+  }
+
+  .ffRatingEx {
+    font-size: 16px;
+  }
+}
