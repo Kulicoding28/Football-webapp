@@ -26,3 +26,77 @@
   text-align: start;
   margin-top: 8px;
 }
+
+@media (max-width: 425px) {
+  .fList {
+    width: 100%;
+    max-width: 425px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fListItem {
+    flex-basis: 50%;
+    max-width: 50%;
+    height: 250px;
+  }
+
+  .fListImg {
+    height: 100%;
+  }
+
+  .fListTitle > h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fList {
+    flex-wrap: wrap;
+  }
+  .fListItem {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .fListImg {
+    height: 200px;
+  }
+  .fListTitle > h1 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .fList {
+    flex-wrap: wrap;
+  }
+  .fListItem {
+    width: calc(50% - 8px);
+    margin-bottom: 16px;
+  }
+  .fListImg {
+    height: 250px;
+  }
+  .fListTitle > h1 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fList {
+    justify-content: space-between;
+  }
+  .fListItem {
+    width: calc(25% - 8px);
+    margin-bottom: 0;
+  }
+  .fListImg {
+    height: 350px;
+  }
+  .fListTitle > h1 {
+    font-size: 32px;
+  }
+}

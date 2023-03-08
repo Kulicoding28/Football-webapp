@@ -37,3 +37,70 @@ h2 {
   font-size: 32px;
   font-weight: normal;
 }
+
+/* Style untuk layar dengan lebar maksimum 1024px */
+@media only screen and (max-width: 1024px) {
+  .featured {
+    flex-wrap: wrap;
+    max-width: 768px;
+  }
+  .featuredItem {
+    width: calc(50% - 8px);
+    margin-bottom: 16px;
+  }
+}
+
+/* Style untuk layar dengan lebar maksimum 768px */
+@media only screen and (max-width: 768px) {
+  .featured {
+    max-width: 480px;
+  }
+  .featuredItem {
+    height: auto;
+  }
+  .featuredImg {
+    height: 200px;
+  }
+  .featuredTitles {
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+/* Style untuk layar dengan lebar maksimum 480px */
+@media only screen and (max-width: 480px) {
+  .featured {
+    max-width: 375px;
+  }
+  .featuredItem {
+    width: 100%;
+    max-width: 375px;
+  }
+  .featuredImg {
+    height: 150px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+/* @media only screen and (min-width: 768px) {
+  .featuredItem {
+    max-width: calc(50% - 8px);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .featuredItem {
+    max-width: calc(33.33% - 10px);
+  }
+} */

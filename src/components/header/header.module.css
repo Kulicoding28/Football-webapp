@@ -115,3 +115,254 @@
 .optionCounterButton:disabled {
   cursor: not-allowed;
 }
+
+/* Tampilan Mobile */
+@media (max-width: 768px) {
+  .headerContainer {
+    height: 300px;
+    max-width: 425px;
+  }
+
+  .headerTitle {
+    font-size: 48px;
+    margin-top: 50px;
+  }
+
+  .headerDesc {
+    font-size: 24px;
+  }
+
+  .headerSearch {
+    height: 40px;
+    bottom: -48px;
+    max-width: 425px;
+    padding: 10px;
+  }
+
+  .headerIcon {
+    height: 16px;
+    width: 16px;
+  }
+
+  .headerBtn {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .headerSearchInput {
+    font-size: 12px;
+  }
+
+  .headerSearchText {
+    font-size: 12px;
+  }
+
+  .option {
+    top: 120px;
+    padding: 8px;
+  }
+
+  .optionItem {
+    width: 140px;
+  }
+
+  .optionCounter {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .headerContainer {
+    height: 200px;
+    width: 100%;
+    max-width: 375px;
+    margin: auto;
+  }
+
+  .headerTitle {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-left: 16px;
+  }
+
+  .headerDesc {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+
+  .headerSearch {
+    height: 20px;
+    bottom: -36px;
+    width: auto;
+    max-width: 375px;
+    margin: auto;
+    padding: 2px;
+  }
+
+  .headerIcon {
+    height: 12px;
+    width: 12px;
+  }
+
+  .headerBtn {
+    font-size: 8px;
+    padding: 2px;
+  }
+
+  .headerSearchInput {
+    font-size: 8px;
+  }
+
+  .headerSearchText {
+    font-size: 6px;
+  }
+
+  .option {
+    top: 70px;
+    padding: 4px;
+  }
+
+  .optionItem {
+    width: 80px;
+  }
+
+  .optionCounter {
+    font-size: 6px;
+  }
+}
+
+/* Tampilan 425px */
+@media (max-width: 425px) {
+  .headerContainer {
+    height: 200px;
+    width: 100%;
+    max-width: 375px;
+  }
+
+  .headerTitle {
+    font-size: 32px;
+    margin-top: 30px;
+  }
+
+  .headerDesc {
+    font-size: 18px;
+  }
+
+  .headerSearch {
+    height: 40px;
+    bottom: -40px;
+    max-width: 375px;
+    padding: 4px;
+  }
+
+  .headerIcon {
+    height: 14px;
+    width: 14px;
+  }
+
+  .headerBtn {
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  .headerSearchInput {
+    font-size: 10px;
+  }
+
+  .headerSearchText {
+    font-size: 8px;
+  }
+
+  .option {
+    top: 80px;
+    padding: 6px;
+  }
+
+  .optionItem {
+    width: 100px;
+  }
+
+  .optionCounter {
+    font-size: 8px;
+  }
+}
+
+/* Style untuk layar dengan lebar antara 768px dan 1023px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .headerContainer {
+    height: 500px;
+    max-width: 768px;
+  }
+
+  .headerTitle {
+    font-size: 80px;
+    margin-top: 75px;
+  }
+
+  .headerDesc {
+    font-size: 48px;
+  }
+
+  .headerSearch {
+    bottom: -20px;
+    max-width: 768px;
+  }
+
+  .option {
+    top: 72px;
+    padding: 14px;
+  }
+
+  .optionItem {
+    width: 160px;
+  }
+
+  .optionCounter {
+    font-size: 11px;
+  }
+
+  .optionCounterButton {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
+}
+
+/* Style untuk layar dengan lebar minimum 1024px */
+@media (min-width: 1024px) {
+  .headerContainer {
+    height: 600px;
+  }
+
+  .headerTitle {
+    font-size: 100px;
+    margin-top: 100px;
+  }
+
+  .headerDesc {
+    font-size: 54px;
+  }
+
+  .headerSearch {
+    bottom: -24px;
+  }
+
+  .option {
+    top: 52px;
+    padding: 16px;
+  }
+
+  .optionItem {
+    width: 200px;
+  }
+
+  .optionCounter {
+    font-size: 12px;
+  }
+
+  .optionCounterButton {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+}

@@ -18,7 +18,17 @@ const SearchItem = () => {
           You can cancel later, so lock in this great price today!
         </span>
       </div>
-      <div className={styles.siDetails}></div>
+      <div className={styles.siDetails}>
+        <div className={styles.siRating}>
+          <span className={styles.exc}>Excellent</span>
+          <button className={styles.btn}>8.9</button>
+        </div>
+        <div className={styles.siDetailTexts}>
+          <span className={styles.siPrice}>IDR 500k</span>
+          <span className={styles.siTaxOp}>Includes parking and fees</span>
+          <button className={styles.siCheckButton}>See availability</button>
+        </div>
+      </div>
     </div>
   );
 };

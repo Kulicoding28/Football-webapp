@@ -35,3 +35,25 @@
   background-color: #fdc845;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .navContainer {
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .navButton {
+    margin-left: 0;
+    margin-left: 10px;
+  }
+
+  .navButton1 {
+    margin-left: 0;
+  }
+}
