@@ -4,7 +4,7 @@ import styles from "./searchItem.module.css";
 const SearchItem = () => {
   return (
     <div className={styles.searchItem}>
-      <img src="/assets/card1.png" alt="" className={styles.siImg} />
+      <img src="/assets/card2.png" alt="" className={styles.siImg} />
       <div className={styles.siDesc}>
         <h1 className={styles.siTitle}>Batavia Field</h1>
         <span className={styles.siDistance}>500m from station</span>
