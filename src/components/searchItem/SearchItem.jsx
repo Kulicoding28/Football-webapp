@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./searchItem.module.css";
 
 const SearchItem = () => {
+  const navigate = useNavigate();
+
+  const handleDetail = () => {
+    navigate("/field/:id");
+  };
   return (
     <div className={styles.searchItem}>
       <img src="/assets/card2.png" alt="" className={styles.siImg} />
@@ -26,7 +32,9 @@ const SearchItem = () => {
         <div className={styles.siDetailTexts}>
           <span className={styles.siPrice}>IDR 500k</span>
           <span className={styles.siTaxOp}>Includes parking and fees</span>
-          <button className={styles.siCheckButton}>See availability</button>
+          <button className={styles.siCheckButton} onClick={handleDetail}>
+            See availability
+          </button>
         </div>
       </div>
     </div>
