@@ -12,7 +12,7 @@ const List = () => {
   const [place, setPlace] = useState(location.state.place);
   const [date, setDate] = useState(location.state.date);
   const [openDate, setOpenDate] = useState(false);
-  const [options, setOptins] = useState(location.state.options);
+  const [options, setOptions] = useState(location.state.options);
 
   return (
     <>
