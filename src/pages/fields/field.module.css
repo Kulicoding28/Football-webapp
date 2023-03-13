@@ -155,3 +155,74 @@ h2 {
   color: lightgray;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .fieldWrapper {
+    max-width: 90%;
+    margin-top: 32px;
+  }
+
+  .fieldTitle {
+    font-size: 24px;
+  }
+
+  .fieldImages {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fieldImgWrapper {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .fieldDetail {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fieldDetailsPrice {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .fieldTitle {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .fieldDesc {
+    font-size: 14px;
+  }
+
+  .fieldDetailsLocated {
+    font-size: 14px;
+  }
+
+  .fieldDetailsPricetTitle {
+    font-size: 20px;
+  }
+
+  .fieldDetailsPrice {
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .fieldDetailsPricebtn {
+    font-size: 14px;
+  }
+
+  .sliderImg {
+    width: 100%;
+    height: 70vh;
+  }
+
+  .close {
+    font-size: 20px;
+  }
+
+  .arrow {
+    font-size: 30px;
+  }
+}

@@ -83,6 +83,7 @@
   padding: 5px;
   font-weight: bold;
   border: none;
+  margin-bottom: 20px;
 }
 
 .siDetailTexts {
@@ -110,4 +111,120 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .searchItem {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .siImg {
+    margin-bottom: 20px;
+  }
+
+  .siDesc {
+    text-align: center;
+  }
+
+  .siTaxiOp {
+    margin-top: 20px;
+  }
+
+  .siDetails {
+    margin-top: 20px;
+    align-self: stretch;
+  }
+
+  .siDetailTexts {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .siPrice {
+    font-size: 18px;
+  }
+
+  .siCheckButton {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .siImg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .siTitle {
+    font-size: 18px;
+  }
+
+  .siDistance,
+  .siTaxiOp,
+  .siSubtitle,
+  .siFeatures,
+  .siCancelOp,
+  .siCancelOpSubtitle,
+  .siPrice,
+  .siTaxOp {
+    font-size: 10px;
+  }
+
+  .siDetailTexts {
+    gap: 5px;
+  }
+
+  .siCheckButton {
+    padding: 8px 5px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .siImg {
+    width: 180px;
+    height: 180px;
+  }
+
+  .siTitle {
+    font-size: 20px;
+  }
+
+  .siDistance,
+  .siTaxiOp,
+  .siSubtitle,
+  .siFeatures,
+  .siCancelOp,
+  .siCancelOpSubtitle,
+  .siPrice,
+  .siTaxOp {
+    font-size: 12px;
+  }
+
+  .siCheckButton {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1367px) {
+  .siImg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .siTitle {
+    font-size: 22px;
+  }
+
+  .siDistance,
+  .siTaxiOp,
+  .siSubtitle,
+  .siFeatures,
+  .siCancelOp,
+  .siCancelOpSubtitle,
+  .siPrice,
+  .siTaxOp {
+    font-size: 14px;
+  }
 }
