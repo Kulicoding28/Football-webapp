@@ -20,11 +20,12 @@
   border-radius: 10px;
 }
 
-.judul {
+.fListTitle {
   font-size: 32px;
   font-weight: 500;
   text-align: start;
   margin-top: 8px;
+  text-transform: capitalize;
 }
 
 @media (max-width: 425px) {
@@ -44,7 +45,7 @@
     height: 250px;
   }
 
-  .judul {
+  .fListTitle {
     font-size: 18px;
   }
 

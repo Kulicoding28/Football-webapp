@@ -1,35 +1,35 @@
 import React from "react";
+import useFetch from "../hooks/useFetch";
 import styles from "./fieldList.module.css";
 
 const FieldList = () => {
+  const { data, loading, error } = useFetch("/fields/countByType");
+
+  const images = [
+    "https://images.pexels.com/photos/3448246/pexels-photo-3448246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/6078300/pexels-photo-6078300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/15964698/pexels-photo-15964698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  ];
   return (
     <div className={styles.fList}>
-      <div className={styles.fListItem}>
-        <img src="/assets/card1.png" alt="" className={styles.fListImg} />
-        <div className={styles.fListTitle}>
-          <h1 className={styles.judul}>Batavia Field</h1>
-        </div>
-      </div>
-
-      <div className={styles.fListItem}>
-        <img src="/assets/card2.png" alt="" className={styles.fListImg} />
-        <div className={styles.fListTitle}>
-          <h1 className={styles.judul}>Ragunan Field</h1>
-        </div>
-      </div>
-
-      <div className={styles.fListItem}>
-        <img src="/assets/card3.png" alt="" className={styles.fListImg} />
-        <div className={styles.fListTitle}>
-          <h1 className={styles.judul}>Kukusan Field</h1>
-        </div>
-      </div>
-      <div className={styles.fListItem}>
-        <img src="/assets/card4.png" alt="" className={styles.fListImg} />
-        <div className={styles.fListTitle}>
-          <h1 className={styles.judul}>Kemang Field</h1>
-        </div>
-      </div>
+      {loading ? (
+        "loading"
+      ) : (
+        <>
+          {data &&
+            images.map((img, i) => (
+              <div className={styles.fListItem} key={i}>
+                <img src={img} alt="" className={styles.fListImg} />
+                <div className={styles.fListTitle}>
+                  <h1>{data[i]?.type}</h1>
+                  <h2>
+                    {data[i]?.count} {data[i]?.type}
+                  </h2>
+                </div>
+              </div>
+            ))}
+        </>
+      )}
     </div>
   );
 };

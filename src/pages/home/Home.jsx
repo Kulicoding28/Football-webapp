@@ -15,7 +15,7 @@ const Home = () => {
         <h1 className={styles.featuredTitle}>All Football Fields</h1>
         <Featured />
         <div className={styles.grayDiv}>
-          <h1 className={styles.homeTitle}>Lates Fields</h1>
+          <h1 className={styles.homeTitle}>Browse By Type</h1>
           <FieldList />
         </div>
         <h1 className={styles.homeTitles}>Browse By Favorite </h1>
