@@ -1,29 +1,36 @@
 import React from "react";
+import useFetch from "../hooks/useFetch";
 import styles from "./featuredField.module.css";
 
 const FeaturedField = () => {
+  const { data, loading, error } = useFetch("/fields?featured=true&limit=2");
+
   return (
     <div className={styles.ff}>
-      <div className={styles.ffItem}>
-        <img src="/assets/card-fav1.png" alt="" className={styles.ffImg} />
-        <span className={styles.ffName}>Kemang Field</span>
-        <span className={styles.ffCity}>Jakarta Selatan</span>
-        <span className={styles.ffPrice}>Price 500k/Hour</span>
-        <div className="ffRating">
-          <button className={styles.ffRatingButton}>8.9</button>
-          <span className={styles.ffRatingEx}>Excelent</span>
-        </div>
-      </div>
-      <div className={styles.ffItem}>
-        <img src="/assets/card-fav.png" alt="" className={styles.ffImg} />
-        <span className={styles.ffName}>Cibinong Field</span>
-        <span className={styles.ffCity}>Bogor</span>
-        <span className={styles.ffPrice}>Price 700k/Hour</span>
-        <div className="ffRating">
-          <button className={styles.ffRatingButton}>8.9</button>
-          <span className={styles.ffRatingEx}>Excelent</span>
-        </div>
-      </div>
+      {loading ? (
+        "loading"
+      ) : (
+        <>
+          {data.map((item) => (
+            <div className={styles.ffItem} key={item._id}>
+              <img src={item.photos[0]} alt="" className={styles.ffImg} />
+              <span className={styles.ffName}>{item.name}</span>
+              <span className={styles.ffCity}>{item.city}</span>
+              <span className={styles.ffPrice}>
+                Price IDR{item.cheapestPrice}K/Hour
+              </span>
+              {item.rating && (
+                <div className="ffRating">
+                  <button className={styles.ffRatingButton}>
+                    {item.rating}
+                  </button>
+                  <span className={styles.ffRatingEx}>Excelent</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 };

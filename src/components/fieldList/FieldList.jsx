@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import styles from "./fieldList.module.css";
 
 const FieldList = () => {
+  // lanjut ke featured list
   const { data, loading, error } = useFetch("/fields/countByType");
 
   const images = [

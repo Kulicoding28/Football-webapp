@@ -1,40 +1,35 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./searchItem.module.css";
 
-const SearchItem = () => {
-  const navigate = useNavigate();
-
-  const handleDetail = () => {
-    navigate("/field/:id");
-  };
+const SearchItem = ({ item }) => {
   return (
     <div className={styles.searchItem}>
-      <img src="/assets/card2.png" alt="" className={styles.siImg} />
+      <img src={item.photos[0]} alt="" className={styles.siImg} />
       <div className={styles.siDesc}>
-        <h1 className={styles.siTitle}>Batavia Field</h1>
-        <span className={styles.siDistance}>500m from station</span>
+        <h1 className={styles.siTitle}>{item.name}</h1>
+        <span className={styles.siDistance}>{item.distance} from center</span>
         <span className={styles.siTaxiOp}>Free drink</span>
         <span className={styles.siSubtitle}>Field grass original</span>
-        <span className={styles.siFeatures}>
-          Entire studio • 2 bathroom • Musque
-        </span>
+        <span className={styles.siFeatures}>{item.desc}</span>
         <span className={styles.siCancelOp}>Free cancellation </span>
         <span className={styles.siCancelOpSubtitle}>
           You can cancel later, so lock in this great price today!
         </span>
       </div>
       <div className={styles.siDetails}>
-        <div className={styles.siRating}>
-          <span className={styles.exc}>Excellent</span>
-          <button className={styles.btn}>8.9</button>
-        </div>
+        {item.rating && (
+          <div className={styles.siRating}>
+            <span className={styles.exc}>Excellent</span>
+            <button className={styles.btn}>{item.rating}</button>
+          </div>
+        )}
         <div className={styles.siDetailTexts}>
-          <span className={styles.siPrice}>IDR 500k</span>
+          <span className={styles.siPrice}>IDR {item.cheapestPrice}k</span>
           <span className={styles.siTaxOp}>Includes parking and fees</span>
-          <button className={styles.siCheckButton} onClick={handleDetail}>
-            See availability
-          </button>
+          <Link to={`/fields/${item._id}`}>
+            <button className={styles.siCheckButton}>See availability</button>
+          </Link>
         </div>
       </div>
     </div>
