@@ -17,7 +17,7 @@ const FeaturedField = () => {
               <span className={styles.ffName}>{item.name}</span>
               <span className={styles.ffCity}>{item.city}</span>
               <span className={styles.ffPrice}>
-                Price IDR{item.cheapestPrice}K/Hour
+                Price IDR{item.cheapestPrice}K/day
               </span>
               {item.rating && (
                 <div className="ffRating">

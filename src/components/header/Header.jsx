@@ -27,8 +27,6 @@ const Header = () => {
 
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
-    team: 1,
-    hours: 1,
     field: 1,
   });
 
@@ -102,54 +100,10 @@ const Header = () => {
               onClick={() => setOpenOptions(!openOptions)}
               className={styles.headerSearchText}
             >
-              {`${options.team} team . ${options.hours}hours . ${options.field}field`}
+              {` ${options.field}field`}
             </span>
             {openOptions && (
               <div className={styles.option}>
-                <div className={styles.optionItem}>
-                  <span className={styles.optionText}>Team</span>
-                  <div className={styles.optionCounter}>
-                    <button
-                      disabled={options.team <= 1}
-                      className={styles.optionCounterButton}
-                      onClick={() => handleOption("team", "d")}
-                    >
-                      -
-                    </button>
-                    <span className={styles.optionCounterNumber}>
-                      {options.team}
-                    </span>
-                    <button
-                      disabled={options.team >= 4}
-                      className={styles.optionCounterButton}
-                      onClick={() => handleOption("team", "i")}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className={styles.optionItem}>
-                  <span className={styles.optionText}>Hour</span>
-                  <div className={styles.optionCounter}>
-                    <button
-                      disabled={options.hours <= 1}
-                      className={styles.optionCounterButton}
-                      onClick={() => handleOption("hours", "d")}
-                    >
-                      -
-                    </button>
-                    <span className={styles.optionCounterNumber}>
-                      {options.hours}
-                    </span>
-                    <button
-                      disabled={options.hours >= 24}
-                      className={styles.optionCounterButton}
-                      onClick={() => handleOption("hours", "i")}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
                 <div className={styles.optionItem}>
                   <span className={styles.optionText}>Field</span>
                   <div className={styles.optionCounter}>

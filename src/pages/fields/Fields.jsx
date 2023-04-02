@@ -93,7 +93,7 @@ const Fields = () => {
               Excellent location – {data.distance}from center
             </span>
             <span className={styles.fieldPriceHighlight}>
-              Book a stay over IDR ${data.cheapestPrice}k/hour at this field and
+              Book a stay over IDR ${data.cheapestPrice}k/day at this field and
               get a free drink
             </span>
             <div className={styles.fieldImages}>
@@ -115,15 +115,15 @@ const Fields = () => {
               </div>
               <div className={styles.fieldDetailsPrice}>
                 <h1 className={styles.fieldDetailsPricetTitle}>
-                  Perfect for a 2-hours playing!
+                  Perfect for a 2-days private field!
                 </h1>
                 <span className={styles.fieldDetailsLocated}>
                   Located in the mampang Depok Jawabarat, this field has an
                   excellent location score of 9.8!
                 </span>
                 <h2>
-                  <b>IDR.{days * data.cheapestPrice * options.hours}k</b> (
-                  {days} hour)
+                  <b>IDR.{days * data.cheapestPrice * options.field}k</b> (
+                  {days} day)
                 </h2>
                 <button className={styles.fieldDetailsPricebtn}>
                   Reserve or Book Now!

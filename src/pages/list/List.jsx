@@ -77,26 +77,7 @@ const List = () => {
                     onChange={(e) => setMax(e.target.value)}
                   />
                 </div>
-                <div className={styles.lsOptionItem}>
-                  <span className={styles.lsOptionText}> Teams</span>
-                  <input
-                    min={1}
-                    max={4}
-                    type="number"
-                    className={styles.lsOptionItem}
-                    placeholder={options.team}
-                  />
-                </div>
-                <div className={styles.lsOptionItem}>
-                  <span className={styles.lsOptionText}>Hour</span>
-                  <input
-                    min={1}
-                    max={4}
-                    type="number"
-                    className={styles.lsOptionItem}
-                    placeholder={options.hours}
-                  />
-                </div>
+
                 <div className={styles.lsOptionItem}>
                   <span className={styles.lsOptionText}>Field</span>
                   <input

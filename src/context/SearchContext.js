@@ -4,8 +4,6 @@ const INITIAL_STATE = {
   city: undefined,
   dates: [],
   options: {
-    team: undefined,
-    hours: undefined,
     field: undefined,
   },
 };
