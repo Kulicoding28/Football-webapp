@@ -6,11 +6,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import useFetch from "../../components/hooks/useFetch";
 import MailList from "../../components/mailList/MailList";
+import Reserve from "../../components/reserve/Reserve";
+import { AuthContext } from "../../context/AuthContext";
 import { SearchContext } from "../../context/SearchContext";
 import styles from "./field.module.css";
 
@@ -19,8 +21,11 @@ const Fields = () => {
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const { data, loading, error } = useFetch(`/fields/find/${id}`);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const { dates, options } = useContext(SearchContext);
 
@@ -48,6 +53,14 @@ const Fields = () => {
     }
 
     setSlideNumber(newSlideNumber);
+  };
+
+  const handleClick = () => {
+    if (user) {
+      setOpenModal(true);
+    } else {
+      Navigate("/login");
+    }
   };
   return (
     <div>
@@ -83,7 +96,9 @@ const Fields = () => {
             </div>
           )}
           <div className={styles.fieldWrapper}>
-            <button className={styles.bookNow}>Reserve or Book Now!</button>
+            <button onClick={handleClick} className={styles.bookNow}>
+              Reserve or Book Now!
+            </button>
             <h1 className={styles.fieldTitle}>{data.name}</h1>
             <div className={styles.fieldAddress}>
               <FontAwesomeIcon icon={faLocation} />
@@ -135,6 +150,7 @@ const Fields = () => {
           <Footer />
         </div>
       )}
+      {openModal && <Reserve setOpen={setOpenModal} fieldId={id} />}
     </div>
   );
 };
